@@ -11,3 +11,4 @@ displayName: Tiny PNG
 releaseNotes: update readme
 dependencies:
   {}
+repository: https://github.com/oomol-flows/tiny-png
