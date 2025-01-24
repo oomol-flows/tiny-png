@@ -1,0 +1,13 @@
+version: 0.0.4
+scripts:
+  # Script executed when the container is first loaded
+  # eg: bootstrap: pip install pandas
+  bootstrap: |
+    pnpm install && pip install -r requirements.txt
+icon: https://package-assets.oomol.com/packages/tiny-png/0.0.3/files/package/icon.png
+name: tiny-png
+description: Smart AVIF, WebP, PNG and JPEG Compression
+displayName: Tiny PNG
+releaseNotes: update readme
+dependencies:
+  {}

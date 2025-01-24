@@ -1,0 +1,32 @@
+inputs_def:
+  - handle: images
+    description: Input
+    json_schema:
+      type: array
+      items:
+        type: string
+  - handle: key
+    json_schema:
+      contentMediaType: oomol/secret
+      type: string
+  - handle: save_address
+    json_schema:
+      type: string
+      ui:widget: dir
+    nullable: true
+outputs_def:
+  - handle: addresses
+    description: Output
+    json_schema:
+      type: array
+      items:
+        type: string
+ui:
+  default_width: 450
+executor:
+  name: nodejs
+  options:
+    spawn: false
+    entry: main.ts
+title: Tiny PNGS
+icon: ":fa6-solid:images:"
