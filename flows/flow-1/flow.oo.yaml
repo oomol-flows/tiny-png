@@ -4,7 +4,7 @@ nodes:
     node_id: tiny-png#1
     inputs_from:
       - handle: image
-        value: /oomol-driver/oomol-storage/images/img_v3_02ii_dc9077c1-dddc-45db-a1bf-166e7e0f016g.jpg
+        value: /oomol-driver/oomol-storage/images/img_v3_02ii_1d1a79c8-fa3e-4153-8213-0707572d868g.jpg
       - handle: key
         value: Custom,tiny-png,api-key
       - handle: save_address
