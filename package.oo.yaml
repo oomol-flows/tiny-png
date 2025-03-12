@@ -1,4 +1,4 @@
-version: 0.0.5
+version: 0.0.6
 scripts:
   # Script executed when the container is first loaded
   # eg: bootstrap: pip install pandas
@@ -8,7 +8,7 @@ icon: https://package-assets.oomol.com/packages/tiny-png/0.0.3/files/package/ico
 name: tiny-png
 description: Smart AVIF, WebP, PNG and JPEG Compression
 displayName: Tiny PNG
-releaseNotes: update readme
+releaseNotes: fix images bug
 dependencies:
-  {}
+  oomol-file: 0.0.7
 repository: https://github.com/oomol-flows/tiny-png

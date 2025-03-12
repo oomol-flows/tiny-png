@@ -25,6 +25,11 @@ export default async function (
   const sizeComparison: { imageName: string; originalSize: string; compressedSize: string, compressionRate: string }[] = [];
 
   for (const image of images) {
+    if (!isImage(image)) {
+      console.warn(`${image} 不是图片文件，已跳过`);
+      continue;
+    }
+
     const mySavePath = getSavePath(image, save_address, context.sessionDir);
     const originalSizeBytes = fs.statSync(image).size;
     const imageName = path.basename(image);
@@ -52,7 +57,7 @@ export default async function (
 function getSavePath(image: string, save_address: string | null, sessionDir: string): string {
   const fileName = path.basename(image);
   const saveDir = save_address ? save_address : sessionDir;
-  return `${saveDir}/tiny_${fileName}`;
+  return `${saveDir}/${fileName}`;
 }
 function generateMarkdownTable(
   sizeComparison: { imageName: string; originalSize: string; compressedSize: string, compressionRate: string; }[],
@@ -80,16 +85,20 @@ function formatFileSize(bytes: number): string {
   }
 }
 
-// 计算压缩率
 function calculateCompressionRate(originalSizeBytes: number, compressedSizeBytes: number): string {
   const compressionRate = (1 - compressedSizeBytes / originalSizeBytes) * 100;
   return `${compressionRate.toFixed(2)}%`;
 }
 
-// 限制字符串长度
 function truncateString(str: string, maxLength: number): string {
   if (str.length > maxLength) {
     return str.slice(0, maxLength) + "...";
   }
   return str;
+}
+
+function isImage(filePath: string): boolean {
+  const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp'];
+  const ext = path.extname(filePath).toLowerCase();
+  return imageExtensions.includes(ext);
 }
