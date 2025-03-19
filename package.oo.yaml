@@ -8,7 +8,7 @@ icon: https://package-assets.oomol.com/packages/tiny-png/0.0.3/files/package/ico
 name: tiny-png
 description: Smart AVIF, WebP, PNG and JPEG Compression
 displayName: Tiny PNG
-releaseNotes: fix images bug
+releaseNotes: git test
 dependencies:
   oomol-file: 0.0.7
 repository: https://github.com/oomol-flows/tiny-png
