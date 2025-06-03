@@ -1,0 +1,98 @@
+nodes:
+  - node_id: map#1
+    title: "Map #1"
+    inputs_from:
+      - handle: array
+        from_node:
+          - node_id: images_filter#1
+            output_handle: images
+      - handle: args
+        value: null
+        from_node:
+          - node_id: iter_args#1
+            output_handle: args
+    subflow: array::map
+    slots:
+      - slot_node_id: +slot#2
+        slotflow: self::+slotflow#1
+  - node_id: iter_args#1
+    title: "Iter Args #1"
+    inputs_from:
+      - handle: key
+        from_flow:
+          - input_handle: key
+        from_node:
+          []
+      - handle: save_address
+        from_flow:
+          - input_handle: save_address
+        from_node:
+          []
+    task: array::iter_args
+    inputs_def:
+      - handle: key
+        json_schema:
+          contentMediaType: oomol/secret
+          type: string
+        kind: secret
+        nullable: false
+      - handle: save_address
+        json_schema:
+          type: string
+          ui:widget: dir
+        kind: primitive
+        nullable: true
+  - node_id: images_filter#1
+    task: self::images_filter
+    inputs_from:
+      - handle: images
+        from_node:
+          - node_id: list_files_from_folder#1
+            output_handle: file_paths
+  - node_id: list_files_from_folder#1
+    title: "List files from folder #1"
+    inputs_from:
+      - handle: folder
+        from_flow:
+          - input_handle: folder
+      - handle: sort
+        value: false
+      - handle: traverse
+        value: false
+      - handle: absolute_path
+        value: true
+    task: oomol-file::list_files_from_folder
+inputs_def:
+  - handle: folder
+    description: Input
+    json_schema:
+      type: string
+      ui:widget: dir
+    kind: primitive
+    nullable: false
+  - handle: key
+    json_schema:
+      contentMediaType: oomol/secret
+      type: string
+    kind: secret
+    nullable: false
+  - handle: save_address
+    json_schema:
+      type: string
+      ui:widget: dir
+    kind: primitive
+    value:
+    nullable: true
+outputs_def:
+  - handle: array
+    json_schema:
+      type: array
+    kind: primitive
+    nullable: false
+outputs_from:
+  - handle: array
+    from_node:
+      - node_id: map#1
+        output_handle: array
+icon: ":carbon:image-copy:"
+title: Tiny PNGS

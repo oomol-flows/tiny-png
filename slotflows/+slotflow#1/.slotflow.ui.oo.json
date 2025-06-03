@@ -1,0 +1,45 @@
+{
+  "nodes": {
+    "tiny-png#1": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 1061,
+          "y": 0
+        }
+      }
+    },
+    "+typescript#1": {
+      "contentWidth": 509.12815259186556,
+      "rfNode": {
+        "position": {
+          "x": 486,
+          "y": 85.25
+        }
+      },
+      "sections": {
+        "scriptlet": {
+          "cardCollapsed": true
+        }
+      }
+    }
+  },
+  "pseudoNodes": {
+    "input": {
+      "rfNode": {
+        "position": {
+          "x": 0,
+          "y": 58.5
+        }
+      }
+    },
+    "output": {
+      "rfNode": {
+        "position": {
+          "x": 1577,
+          "y": 85.5
+        }
+      }
+    }
+  }
+}

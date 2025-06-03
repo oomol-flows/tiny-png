@@ -1,0 +1,11 @@
+title: image
+nodes:
+  - node_id: tiny-png#1
+    title: "Tiny PNG #1"
+    inputs_from:
+      - handle: image
+      - handle: key
+        value: ""
+      - handle: save_address
+        value: null
+    task: self::tiny-png

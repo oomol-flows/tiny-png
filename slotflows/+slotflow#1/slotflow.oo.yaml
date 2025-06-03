@@ -1,0 +1,55 @@
+nodes:
+  - node_id: tiny-png#1
+    title: "Tiny PNG #1"
+    inputs_from:
+      - handle: image
+        from_flow:
+          - input_handle: item
+      - handle: key
+        value: ""
+        from_node:
+          - node_id: +typescript#1
+            output_handle: key
+      - handle: save_address
+        value: null
+        from_node:
+          - node_id: +typescript#1
+            output_handle: save_address
+    task: self::tiny-png
+  - node_id: +typescript#1
+    title: "TypeScript #1"
+    icon: ":skill-icons:typescript:"
+    task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: args
+          description: Input
+          json_schema:
+            {}
+      outputs_def:
+        - handle: key
+          json_schema:
+            contentMediaType: oomol/secret
+            type: string
+          kind: secret
+          nullable: false
+        - handle: save_address
+          json_schema:
+            type: string
+            ui:widget: dir
+          kind: primitive
+          nullable: true
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+scriptlet#1.ts
+    inputs_from:
+      - handle: args
+        from_flow:
+          - input_handle: args
+outputs_from:
+  - handle: item
+    from_node:
+      - node_id: tiny-png#1
+        output_handle: address
