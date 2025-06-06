@@ -6,6 +6,6 @@ nodes:
       - handle: key
         value: ${{OO_SECRET:Custom,tiny-png,api-key}}
       - handle: save_address
-        value:
+        value: /oomol-driver/oomol-storage/images_tiny
     subflow: self::tiny-pngs
 title: images

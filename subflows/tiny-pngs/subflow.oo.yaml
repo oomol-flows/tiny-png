@@ -75,6 +75,7 @@ inputs_def:
       contentMediaType: oomol/secret
       type: string
     kind: secret
+    value: ""
     nullable: false
   - handle: save_address
     json_schema:
