@@ -1,0 +1,60 @@
+title: TinyPNG Image Compression
+description: Compress images using TinyPNG API to reduce file size while maintaining quality
+icon: ":compression:"
+
+inputs_def:
+  - handle: input_image
+    description: Path to the input image file (PNG, JPG, or WebP)
+    json_schema:
+      type: string
+      ui:widget: file
+    nullable: false
+
+  - handle: output_image
+    description: Path for the compressed output image (optional, auto-generated if null)
+    json_schema:
+      type:
+        - "string"
+        - "null"
+      ui:widget: save
+      ui:options:
+        filters:
+          - name: PNG
+            extensions:
+              - "png"
+          - name: JPG
+            extensions:
+              - "jpg"
+              - "jpeg"
+          - name: WebP
+            extensions:
+              - "webp"
+    nullable: true
+    value: null
+
+outputs_def:
+  - handle: compressed_image
+    description: Path to the compressed image file
+    json_schema:
+      type: string
+
+  - handle: original_size
+    description: Original file size in bytes
+    json_schema:
+      type: number
+
+  - handle: compressed_size
+    description: Compressed file size in bytes
+    json_schema:
+      type: number
+
+  - handle: compression_ratio
+    description: Compression ratio as percentage (0-100)
+    json_schema:
+      type: number
+
+executor:
+  name: nodejs
+  options:
+    entry: main.ts
+    spawn: false
