@@ -1,4 +1,4 @@
-version: 0.1.6
+version: 0.1.7
 scripts:
   bootstrap: |
     npm install
@@ -10,5 +10,5 @@ dependencies:
 name: tiny-png
 description: Compress images using TinyPNG API to reduce file size while maintaining quality
 displayName: Tiny PNG
-releaseNotes: update
+releaseNotes: fix type bug
 repository: https://github.com/oomol-flows/tiny-png

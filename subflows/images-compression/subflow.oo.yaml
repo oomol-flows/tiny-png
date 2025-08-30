@@ -65,6 +65,9 @@ outputs_def:
   - handle: array
     json_schema:
       type: array
+      items:
+        type: string
+        ui:widget: file
     nullable: false
 outputs_from:
   - handle: array
