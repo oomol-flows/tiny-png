@@ -1,9 +1,0 @@
-nodes:
-  - node_id: tiny-png#1
-    title: "TinyPNG Image Compression #1"
-    inputs_from:
-      - handle: input_image
-        value: /oomol-driver/oomol-storage/tmprqjaum3u.png
-      - handle: output_image
-        value: null
-    task: self::tiny-png

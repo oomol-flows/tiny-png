@@ -1,0 +1,67 @@
+nodes:
+  - node_id: image-compression#1
+    title: "Image Compression #1"
+    inputs_from:
+      - handle: input_image
+        from_flow:
+          - input_handle: item
+      - handle: output_image
+        value: null
+        from_node:
+          - node_id: +typescript#1
+            output_handle: output_image
+    task: self::image-compression
+  - node_id: +typescript#1
+    title: "TypeScript #1"
+    icon: ":skill-icons:typescript:"
+    task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: item
+          json_schema:
+            {}
+          nullable: false
+        - handle: destination_folder
+          json_schema:
+            type: string
+            ui:widget: dir
+          nullable: true
+      outputs_def:
+        - handle: output_image
+          json_schema:
+            type:
+              - string
+              - "null"
+            ui:widget: save
+            ui:options:
+              filters:
+                - name: PNG
+                  extensions:
+                    - png
+                - name: JPG
+                  extensions:
+                    - jpg
+                    - jpeg
+                - name: WebP
+                  extensions:
+                    - webp
+          nullable: true
+          description: Path for the compressed output image (optional, auto-generated if
+            null)
+      executor:
+        name: nodejs
+        options:
+          entry: scriptlets/+scriptlet#1.ts
+    inputs_from:
+      - handle: destination_folder
+        from_flow:
+          - input_handle: destination_folder
+      - handle: item
+        from_flow:
+          - input_handle: item
+outputs_from:
+  - handle: item
+    from_node:
+      - node_id: image-compression#1
+        output_handle: compressed_image

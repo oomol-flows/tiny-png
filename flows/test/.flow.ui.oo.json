@@ -1,10 +1,10 @@
 {
   "nodes": {
-    "tiny-png#1": {
+    "images-compression#1": {
       "rfNode": {
         "position": {
-          "x": 177,
-          "y": 405
+          "x": 409,
+          "y": 102
         }
       }
     }

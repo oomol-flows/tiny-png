@@ -1,0 +1,39 @@
+{
+  "nodes": {
+    "image-compression#1": {
+      "rfNode": {
+        "position": {
+          "x": 503.9886578449906,
+          "y": -85.50472589792061
+        }
+      }
+    },
+    "+typescript#1": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": -56.327032136105856,
+          "y": 4.574669187145592
+        }
+      }
+    }
+  },
+  "pseudoNodes": {
+    "input": {
+      "rfNode": {
+        "position": {
+          "x": -633.8487712665407,
+          "y": -181
+        }
+      }
+    },
+    "output": {
+      "rfNode": {
+        "position": {
+          "x": 1000,
+          "y": -100
+        }
+      }
+    }
+  }
+}

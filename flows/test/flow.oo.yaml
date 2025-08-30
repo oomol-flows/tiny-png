@@ -1,0 +1,9 @@
+nodes:
+  - node_id: images-compression#1
+    title: "Images Compression #1"
+    inputs_from:
+      - handle: folder
+        value: /oomol-driver/oomol-storage/stickers
+      - handle: destination_folder
+        value: null
+    subflow: self::images-compression

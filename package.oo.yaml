@@ -1,6 +1,14 @@
-version: 0.0.1
+version: 0.1.6
 scripts:
   bootstrap: |
     npm install
     poetry install --no-root
 icon: ./icon.png
+dependencies:
+  array: 0.1.1
+  oomol-file: 0.0.18
+name: tiny-png
+description: Compress images using TinyPNG API to reduce file size while maintaining quality
+displayName: Tiny PNG
+releaseNotes: update
+repository: https://github.com/oomol-flows/tiny-png

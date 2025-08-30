@@ -1,0 +1,77 @@
+nodes:
+  - node_id: map#1
+    title: "Map #1"
+    inputs_from:
+      - handle: array
+        from_node:
+          - node_id: filter_files#1
+            output_handle: files
+    subflow: array::map
+    slots:
+      - slot_node_id: +slot#2
+        slotflow: self::+slotflow#1
+        inputs_def:
+          - handle: destination_folder
+            json_schema:
+              type: string
+              ui:widget: dir
+            nullable: true
+            executor_name: nodejs
+        inputs_from:
+          - handle: destination_folder
+            from_flow:
+              - input_handle: destination_folder
+  - node_id: list_files_from_folder#1
+    title: "List files from folder #1"
+    inputs_from:
+      - handle: folder
+        from_flow:
+          - input_handle: folder
+      - handle: sort
+        value: false
+      - handle: traverse
+        value: false
+      - handle: absolute_path
+        value: true
+    task: oomol-file::list_files_from_folder
+  - node_id: filter_files#1
+    title: "Filter Files #1"
+    inputs_from:
+      - handle: files
+        from_node:
+          - node_id: list_files_from_folder#1
+            output_handle: file_paths
+      - handle: type
+        value: image
+      - handle: filt_hide
+        value: true
+    task: oomol-file::filter_files
+inputs_def:
+  - handle: folder
+    json_schema:
+      type: string
+      ui:widget: dir
+    nullable: false
+    description: ""
+    executor_name: nodejs
+  - handle: destination_folder
+    json_schema:
+      type: string
+      ui:widget: dir
+    nullable: true
+    value:
+    executor_name: nodejs
+outputs_def:
+  - handle: array
+    json_schema:
+      type: array
+    nullable: false
+outputs_from:
+  - handle: array
+    from_node:
+      - node_id: map#1
+        output_handle: array
+title: Images Compression
+icon: ":carbon:image-copy:"
+description: Bulkly compress the pictures in a folder and save them to the
+  target folder specified by the user.

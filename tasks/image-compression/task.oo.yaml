@@ -1,6 +1,6 @@
-title: TinyPNG Image Compression
+title: Image Compression
 description: Compress images using TinyPNG API to reduce file size while maintaining quality
-icon: ":compression:"
+icon: ":carbon:image:"
 
 inputs_def:
   - handle: input_image
