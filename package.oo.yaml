@@ -1,4 +1,4 @@
-version: 0.1.7
+version: 0.1.8
 scripts:
   bootstrap: |
     npm install
@@ -8,7 +8,7 @@ dependencies:
   array: 0.1.1
   oomol-file: 0.0.18
 name: tiny-png
-description: Compress images using TinyPNG API to reduce file size while maintaining quality
+description: "%compress-images-using-tinypng-api-to-reduce-file-size-while-main%"
 displayName: Tiny PNG
 releaseNotes: fix type bug
 repository: https://github.com/oomol-flows/tiny-png
