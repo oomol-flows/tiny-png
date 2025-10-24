@@ -1,17 +1,17 @@
-title: Image Compression
-description: Compress images using TinyPNG API to reduce file size while maintaining quality
+title: "%image-compression2%"
+description: "%compress-images-using-tinypng-api-to-reduce-file-size-while-main3%"
 icon: ":carbon:image:"
 
 inputs_def:
   - handle: input_image
-    description: Path to the input image file (PNG, JPG, or WebP)
+    description: "%path-to-the-input-image-file-png-jpg-or-webp2%"
     json_schema:
       type: string
       ui:widget: file
     nullable: false
 
   - handle: output_image
-    description: Path for the compressed output image (optional, auto-generated if null)
+    description: "%path-for-the-compressed-output-image-optional-auto-generated-if2%"
     json_schema:
       type:
         - "string"
@@ -29,8 +29,8 @@ inputs_def:
           - name: WebP
             extensions:
               - "webp"
+    value:
     nullable: true
-    value: null
 
 outputs_def:
   - handle: compressed_image

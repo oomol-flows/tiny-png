@@ -1,6 +1,6 @@
 nodes:
   - node_id: image-compression#1
-    title: "Image Compression #1"
+    title: "%image-compression-1%"
     inputs_from:
       - handle: input_image
         from_flow:
@@ -12,7 +12,7 @@ nodes:
             output_handle: output_image
     task: self::image-compression
   - node_id: +typescript#1
-    title: "TypeScript #1"
+    title: "%typescript-1%"
     icon: ":skill-icons:typescript:"
     task:
       ui:

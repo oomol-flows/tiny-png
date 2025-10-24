@@ -1,6 +1,6 @@
 nodes:
   - node_id: map#1
-    title: "Map #1"
+    title: "%map-1%"
     inputs_from:
       - handle: array
         from_node:
@@ -22,7 +22,7 @@ nodes:
             from_flow:
               - input_handle: destination_folder
   - node_id: list_files_from_folder#1
-    title: "List files from folder #1"
+    title: "%list-files-from-folder-1%"
     inputs_from:
       - handle: folder
         from_flow:
@@ -35,7 +35,7 @@ nodes:
         value: true
     task: oomol-file::list_files_from_folder
   - node_id: filter_files#1
-    title: "Filter Files #1"
+    title: "%filter-files-1%"
     inputs_from:
       - handle: files
         from_node:
@@ -48,21 +48,23 @@ nodes:
     task: oomol-file::filter_files
 inputs_def:
   - handle: folder
+    description: "%source-folder-containing-images-to-compress%"
     json_schema:
       type: string
       ui:widget: dir
     nullable: false
-    description: ""
     executor_name: nodejs
   - handle: destination_folder
+    description: "%destination-folder-for-compressed-images-optional-defaults-to-so%"
     json_schema:
       type: string
       ui:widget: dir
-    nullable: true
     value:
+    nullable: true
     executor_name: nodejs
 outputs_def:
   - handle: array
+    description: "Array of compressed image file paths"
     json_schema:
       type: array
       items:
@@ -74,7 +76,6 @@ outputs_from:
     from_node:
       - node_id: map#1
         output_handle: array
-title: Images Compression
+title: "%images-compression2%"
 icon: ":carbon:image-copy:"
-description: Bulkly compress the pictures in a folder and save them to the
-  target folder specified by the user.
+description: "%bulk-compress-images-in-a-folder-and-save-them-to-the-target-dir%"
