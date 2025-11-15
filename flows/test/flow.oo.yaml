@@ -1,12 +1,12 @@
 nodes:
   - node_id: upload-to-cloud#1
-    title: "上传文件到云端 #1"
+    title: "%1%"
     inputs_from:
       - handle: file
         value: /oomol-driver/oomol-storage/7cbf2882-ac42-4358-8680-6c4122061e0f.jpg
     task: upload-to-cloud::upload-to-cloud
   - node_id: tinify-compress#1
-    title: "Tinify Image Compression #1"
+    title: "%tinify-image-compression-1%"
     inputs_from:
       - handle: image_url
         from_node:
@@ -16,7 +16,7 @@ nodes:
         value:
     task: self::image-url-tinify-compress
   - node_id: image-file-tinify-compress#1
-    title: "Image File Tinify Compress #1"
+    title: "%image-file-tinify-compress-1%"
     inputs_from:
       - handle: file
         value: /oomol-driver/oomol-storage/833a38dc-4f83-4375-9a8e-4cd7f016bd7c.jpg
@@ -24,7 +24,7 @@ nodes:
         value: null
     subflow: self::image-file-tinify-compress
   - node_id: image-file-tinify-compress#2
-    title: "Image File Tinify Compress #2"
+    title: "%image-file-tinify-compress-2%"
     inputs_from:
       - handle: file
         value: /oomol-driver/oomol-storage/833a38dc-4f83-4375-9a8e-4cd7f016bd7c.jpg
@@ -32,7 +32,7 @@ nodes:
         value: null
     subflow: self::image-file-tinify-compress
   - node_id: images-compression#1
-    title: "批量图像压缩 #1"
+    title: "%12%"
     inputs_from:
       - handle: folder
         value: /oomol-driver/oomol-storage/images

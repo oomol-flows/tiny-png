@@ -1,25 +1,15 @@
-title: "Image Url Tinify Compression"
-description: "Compress images using Tinify API to reduce file size while
-  maintaining quality. This task accepts an image URL, processes it through the
-  Tinify compression service, downloads the compressed result, and saves it
-  locally. It provides both the compressed image URL and local file path as
-  outputs."
+title: "%image-url-tinify-compression%"
+description: "%compress-images-using-tinify-api-to-reduce-file-size-while-maint%"
 icon: ":carbon:image:"
 
 inputs_def:
   - handle: image_url
-    description: "URL of the image to compress. Accepts any valid online image URL
-      (HTTP/HTTPS). The image will be fetched and sent to Tinify API for
-      compression. Supported formats include PNG, JPEG, and other common image
-      formats."
+    description: "%url-of-the-image-to-compress-accepts-any-valid-online-image-url%"
     json_schema:
       type: string
     nullable: false
   - handle: save_path
-    description: "Optional custom save path for the compressed image file. If not
-      specified (null), the file will be automatically saved to the OOMOL
-      storage directory with a unique timestamp-based filename. When specified,
-      provide an absolute file path including the filename and extension."
+    description: "%optional-custom-save-path-for-the-compressed-image-file-if-not-s%"
     json_schema:
       type: string
       ui:widget: save
@@ -28,18 +18,11 @@ inputs_def:
 
 outputs_def:
   - handle: compressed_url
-    description: "URL of the compressed image hosted on the Tinify service. This URL
-      can be used to access the compressed image directly or for further
-      processing. The URL remains accessible for a limited time according to
-      Tinify's retention policy."
+    description: "%url-of-the-compressed-image-hosted-on-the-tinify-service-this-ur%"
     json_schema:
       type: string
   - handle: compressed_file
-    description: "Absolute local file path where the compressed image has been
-      saved. The file is stored either at the custom save_path (if provided) or
-      in the OOMOL storage directory (/oomol-driver/oomol-storage/) with a
-      generated filename in format 'compressed_[timestamp].[ext]' where
-      extension is .png or .jpg based on the image content type."
+    description: "%absolute-local-file-path-where-the-compressed-image-has-been-sav%"
     json_schema:
       type: string
 

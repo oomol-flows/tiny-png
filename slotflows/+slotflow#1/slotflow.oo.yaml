@@ -1,6 +1,6 @@
 nodes:
   - node_id: image-file-tinify-compress#1
-    title: "Image File Tinify Compress #1"
+    title: "%image-file-tinify-compress-12%"
     inputs_from:
       - handle: file
         from_flow:
