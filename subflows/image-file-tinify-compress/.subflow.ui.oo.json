@@ -1,0 +1,38 @@
+{
+  "nodes": {
+    "upload-to-cloud#1": {
+      "rfNode": {
+        "position": {
+          "x": 1002,
+          "y": 143.5
+        }
+      }
+    },
+    "tinify-compress#2": {
+      "rfNode": {
+        "position": {
+          "x": 1488,
+          "y": 368.25
+        }
+      }
+    }
+  },
+  "pseudoNodes": {
+    "input": {
+      "rfNode": {
+        "position": {
+          "x": 0,
+          "y": 450.25
+        }
+      }
+    },
+    "output": {
+      "rfNode": {
+        "position": {
+          "x": 1974,
+          "y": 440.25
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+nodes:
+  - node_id: upload-to-cloud#1
+    title: "上传文件到云端 #1"
+    inputs_from:
+      - handle: file
+        value: /oomol-driver/oomol-storage/7cbf2882-ac42-4358-8680-6c4122061e0f.jpg
+        from_flow:
+          - input_handle: file
+        from_node:
+          []
+    task: upload-to-cloud::upload-to-cloud
+  - node_id: tinify-compress#2
+    title: "Tinify Image Compression #2"
+    inputs_from:
+      - handle: image_url
+        from_node:
+          - node_id: upload-to-cloud#1
+            output_handle: remote_url
+      - handle: save_path
+        from_flow:
+          - input_handle: save_path
+    task: self::image-url-tinify-compress
+inputs_def:
+  - handle: file
+    description: "Local image file path to compress. Provide an absolute path to any
+      image file (PNG, JPEG, etc.) stored on the local filesystem. The file will
+      be uploaded to cloud storage first, then compressed using the Tinify API."
+    json_schema:
+      type: string
+      ui:widget: file
+    nullable: false
+    executor_name: nodejs
+  - handle: save_path
+    description: "Optional destination path for saving the compressed image. If not
+      specified (null), the compressed image will be saved to the OOMOL storage
+      directory with an auto-generated filename. When provided, specify an
+      absolute file path including the desired filename and extension."
+    json_schema:
+      type: string
+      ui:widget: save
+    value:
+    nullable: true
+    executor_name: nodejs
+outputs_def:
+  - handle: compressed_url
+    description: "URL of the compressed image hosted on Tinify service. This URL
+      provides direct access to the compressed image and can be used for sharing
+      or further processing. The URL has a limited retention period based on
+      Tinify's service policies."
+    json_schema:
+      type: string
+    nullable: false
+    executor_name: nodejs
+  - handle: compressed_file
+    description: "Absolute local file path where the compressed image has been
+      saved. The file location is either the custom save_path (if provided) or
+      an auto-generated path in the OOMOL storage directory
+      (/oomol-driver/oomol-storage/) with format
+      'compressed_[timestamp].[ext]'."
+    json_schema:
+      type: string
+    nullable: false
+    executor_name: nodejs
+outputs_from:
+  - handle: compressed_file
+    from_node:
+      - node_id: tinify-compress#2
+        output_handle: compressed_file
+  - handle: compressed_url
+    from_node:
+      - node_id: tinify-compress#2
+        output_handle: compressed_url
+title: Image File Tinify Compress
+description: "Compress a local image file using Tinify API. This subflow
+  orchestrates a two-step process: first uploading the local image file to cloud
+  storage to obtain a URL, then compressing the image via the Tinify service.
+  The workflow provides both a cloud URL and local file path for the compressed
+  result, making it suitable for batch processing or integration with other
+  image workflows."
+icon: ":carbon:image-reference:"

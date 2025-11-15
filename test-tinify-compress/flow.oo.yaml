@@ -1,0 +1,7 @@
+title: "Test Tinify Compress"
+nodes:
+  - node_id: tinify-compress#1
+    task: self::tinify-compress
+    inputs_from:
+      - handle: image_url
+        value: "https://canvas-conversion-demo-dev.oss-cn-hangzhou.aliyuncs.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-11-11_162033_040.jpg"

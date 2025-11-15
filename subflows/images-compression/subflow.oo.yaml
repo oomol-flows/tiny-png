@@ -64,7 +64,12 @@ inputs_def:
     executor_name: nodejs
 outputs_def:
   - handle: array
-    description: "Array of compressed image file paths"
+    description: "Array of absolute file paths for all successfully compressed
+      images. Each element in the array represents a compressed image file path,
+      either saved to the specified destination_folder or to the OOMOL storage
+      directory. The array preserves the processing order of images from the
+      source folder. Can be used for further batch processing, archiving, or
+      validation workflows."
     json_schema:
       type: array
       items:

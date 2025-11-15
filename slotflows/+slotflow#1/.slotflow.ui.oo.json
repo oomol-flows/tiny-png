@@ -1,19 +1,10 @@
 {
   "nodes": {
-    "image-compression#1": {
+    "image-file-tinify-compress#1": {
       "rfNode": {
         "position": {
-          "x": 503.9886578449906,
-          "y": -85.50472589792061
-        }
-      }
-    },
-    "+typescript#1": {
-      "contentWidth": 450,
-      "rfNode": {
-        "position": {
-          "x": -56.327032136105856,
-          "y": 4.574669187145592
+          "x": 486,
+          "y": 0
         }
       }
     }
@@ -22,16 +13,16 @@
     "input": {
       "rfNode": {
         "position": {
-          "x": -633.8487712665407,
-          "y": -181
+          "x": -159.17842653139442,
+          "y": 45
         }
       }
     },
     "output": {
       "rfNode": {
         "position": {
-          "x": 1000,
-          "y": -100
+          "x": 972,
+          "y": 85.5
         }
       }
     }

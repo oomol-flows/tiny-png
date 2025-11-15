@@ -5,9 +5,10 @@ scripts:
     poetry install --no-root
 icon: ./icon.png
 dependencies:
-  array: 0.1.1
+  array: 0.1.5
   oomol-file: 0.1.1
   upload-to-cloud: 0.0.4
+  downloader: 0.0.9
 name: tiny-png
 description: "%compress-images-using-tinypng-api-to-reduce-file-size-while-main%"
 displayName: "%display-name%"
