@@ -1,0 +1,23 @@
+inputs_def:
+  - handle: image_url
+    description: "URL of the image to compress"
+    json_schema:
+      type: string
+    nullable: false
+
+outputs_def:
+  - handle: compressed_image_url
+    description: "URL of the compressed image"
+    json_schema:
+      type: string
+    nullable: false
+
+executor:
+  name: python
+  options:
+    entry: __init__.py
+    spawn: false
+
+title: "TinyPNG Image Compression"
+icon: ":carbon:image-copy:"
+description: "Compress images using TinyPNG API service"

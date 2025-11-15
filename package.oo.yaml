@@ -7,6 +7,7 @@ icon: ./icon.png
 dependencies:
   array: 0.1.1
   oomol-file: 0.1.1
+  upload-to-cloud: 0.0.4
 name: tiny-png
 description: "%compress-images-using-tinypng-api-to-reduce-file-size-while-main%"
 displayName: "%display-name%"

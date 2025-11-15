@@ -1,10 +1,18 @@
 {
   "nodes": {
-    "images-compression#1": {
+    "tinify-png-shrink#2": {
       "rfNode": {
         "position": {
-          "x": 409,
-          "y": 102
+          "x": 43.46345902423049,
+          "y": 523.2934835011985
+        }
+      }
+    },
+    "upload-to-cloud#1": {
+      "rfNode": {
+        "position": {
+          "x": -470.33122359355855,
+          "y": 503.9987372853495
         }
       }
     }
