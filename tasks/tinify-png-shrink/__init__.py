@@ -4,6 +4,9 @@ class Inputs(typing.TypedDict):
     image_url: str
 class Outputs(typing.TypedDict):
     compressed_image_url: typing.NotRequired[str]
+    original_size: typing.NotRequired[float]
+    compressed_size: typing.NotRequired[float]
+    compression_ratio: typing.NotRequired[float]
 #endregion
 
 from oocana import Context
@@ -56,4 +59,35 @@ async def main(params: Inputs, context: Context) -> Outputs:
     # Extract compressed image URL from response
     compressed_url = result.get("compressedImageURL", "")
 
-    return {"compressed_image_url": compressed_url}
+    # Get original image size
+    original_response = requests.head(image_url, timeout=10.0)
+    original_size = int(original_response.headers.get("Content-Length", 0))
+
+    # Get compressed image size
+    compressed_response = requests.head(compressed_url, timeout=10.0)
+    compressed_size = int(compressed_response.headers.get("Content-Length", 0))
+
+    # Calculate compression ratio
+    compression_ratio = 0.0
+    if original_size > 0:
+        compression_ratio = ((original_size - compressed_size) / original_size) * 100
+
+    # Display compression results
+    context.preview({
+        "type": "markdown",
+        "data": f"""## Image Compression Results
+
+- **Original Size**: {original_size / 1024:.2f} KB
+- **Compressed Size**: {compressed_size / 1024:.2f} KB
+- **Compression Ratio**: {compression_ratio:.2f}%
+- **Space Saved**: {(original_size - compressed_size) / 1024:.2f} KB
+
+**Compressed Image URL**: {compressed_url}"""
+    })
+
+    return {
+        "compressed_image_url": compressed_url,
+        "original_size": original_size,
+        "compressed_size": compressed_size,
+        "compression_ratio": compression_ratio
+    }

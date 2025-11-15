@@ -12,6 +12,21 @@ outputs_def:
       type: string
     nullable: false
 
+  - handle: original_size
+    description: "Original file size in bytes"
+    json_schema:
+      type: number
+
+  - handle: compressed_size
+    description: "Compressed file size in bytes"
+    json_schema:
+      type: number
+
+  - handle: compression_ratio
+    description: "Compression ratio as percentage (0-100)"
+    json_schema:
+      type: number
+
 executor:
   name: python
   options:
