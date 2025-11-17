@@ -1,6 +1,4 @@
 {
-  "1": "Upload file to the cloud #1",
-  "12": "Batch Image Compression #1",
   "13": "Upload file to the cloud #1",
   "compress-images-using-tinypng-api-to-reduce-file-size-while-main": "A user-friendly image compression toolkit that helps you reduce image file sizes while maintaining quality using advanced compression algorithms.",
   "display-name": "Tiny PNG",
@@ -18,9 +16,6 @@
   "bulk-compress-images-in-a-folder-and-save-them-to-the-target-dir": "Bulk compress images in a folder and save them to the target directory",
   "source-folder-containing-images-to-compress": "Source folder containing images to compress",
   "destination-folder-for-compressed-images-optional-defaults-to-so": "Destination folder for compressed images (optional, defaults to source folder)",
-  "tinify-image-compression-1": "Tinify Image Compression #1",
-  "image-file-tinify-compress-1": "Image File Tinify Compress #1",
-  "image-file-tinify-compress-2": "Image File Tinify Compress #2",
   "image-url-tinify-compression": "Image Url Tinify Compression",
   "compress-images-using-tinify-api-to-reduce-file-size-while-maint": "Compress images using Tinify API to reduce file size while maintaining quality. This task accepts an image URL, processes it through the Tinify compression service, downloads the compressed result, and saves it locally. It provides both the compressed image URL and local file path as outputs.",
   "url-of-the-image-to-compress-accepts-any-valid-online-image-url": "URL of the image to compress. Accepts any valid online image URL (HTTP/HTTPS). The image will be fetched and sent to Tinify API for compression. Supported formats include PNG, JPEG, and other common image formats.",

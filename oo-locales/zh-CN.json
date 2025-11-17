@@ -1,6 +1,4 @@
 {
-  "1": "上传文件到云端 #1",
-  "12": "批量图像压缩 #1",
   "13": "上传文件到云端 #1",
   "compress-images-using-tinypng-api-to-reduce-file-size-while-main": "一个用户友好的图像压缩工具包，利用先进的压缩算法在保持图像质量的同时帮助您减小图片文件大小。",
   "display-name": "Tiny PNG",
@@ -18,9 +16,6 @@
   "bulk-compress-images-in-a-folder-and-save-them-to-the-target-dir": "批量压缩文件夹中的图片并将其保存到目标目录",
   "source-folder-containing-images-to-compress": "包含待压缩图片的源文件夹",
   "destination-folder-for-compressed-images-optional-defaults-to-so": "压缩图片的目标文件夹（可选，默认为源文件夹）",
-  "tinify-image-compression-1": "Tinify 图像压缩 #1",
-  "image-file-tinify-compress-1": "图片文件 Tinify 压缩 #1",
-  "image-file-tinify-compress-2": "图片文件 Tinify 压缩 #2",
   "image-url-tinify-compression": "图片网址 Tinify 压缩",
   "compress-images-using-tinify-api-to-reduce-file-size-while-maint": "使用 Tinify API 压缩图片，以在保持质量的同时减小文件大小。此任务接受一个图片 URL，通过 Tinify 压缩服务处理，下载压缩后的结果，并将其本地保存。输出包括压缩后图片的 URL 和本地文件路径。",
   "url-of-the-image-to-compress-accepts-any-valid-online-image-url": "要压缩的图片 URL。接受任何有效的在线图片 URL（HTTP 或 HTTPS）。图片将被获取并发送到 Tinify API 进行压缩。支持的格式包括 PNG、JPEG 以及其他常见的图片格式。",
