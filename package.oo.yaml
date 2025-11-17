@@ -1,4 +1,4 @@
-version: 0.2.1
+version: 0.2.2
 scripts:
   bootstrap: |
     npm install
@@ -7,7 +7,7 @@ icon: ./icon.png
 dependencies:
   array: 0.1.5
   oomol-file: 0.1.1
-  upload-to-cloud: 0.0.4
+  upload-to-cloud: 0.0.5
   downloader: 0.0.9
 name: tiny-png
 description: "%compress-images-using-tinypng-api-to-reduce-file-size-while-main%"
