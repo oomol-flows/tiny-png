@@ -1,0 +1,28 @@
+{
+  "nodes": {
+    "image-file-tinify-compress#1": {
+      "rfNode": {
+        "position": {
+          "x": 305.2550641074901,
+          "y": 65.63684728007757
+        }
+      }
+    },
+    "image-file-tinify-compress#2": {
+      "rfNode": {
+        "position": {
+          "x": 416.18035595691185,
+          "y": 476.5576556704276
+        }
+      }
+    },
+    "images-compression#1": {
+      "rfNode": {
+        "position": {
+          "x": 361.18201941001604,
+          "y": 925.710737470077
+        }
+      }
+    }
+  }
+}
