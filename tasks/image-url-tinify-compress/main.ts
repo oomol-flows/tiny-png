@@ -81,9 +81,19 @@ export default async function(
     const contentType = responseData.data?.contentType || downloadResponse.headers.get('content-type') || 'image/jpeg';
     const ext = contentType.includes('png') ? '.png' : '.jpg';
 
-    // Generate unique filename
-    const filename = `compressed_${Date.now()}${ext}`;
-    const outputPath = path.join('/oomol-driver/oomol-storage', filename);
+    // Determine output path
+    let outputPath: string;
+    if (params.save_path && params.save_path.trim() !== "") {
+      // Use user-specified path
+      outputPath = params.save_path;
+      // Ensure directory exists
+      const dir = path.dirname(outputPath);
+      await fs.promises.mkdir(dir, { recursive: true });
+    } else {
+      // Auto-generate path in oomol-storage
+      const filename = `compressed_${Date.now()}${ext}`;
+      outputPath = path.join('/oomol-driver/oomol-storage', filename);
+    }
 
     // Save the file
     await fs.promises.writeFile(outputPath, Buffer.from(imageBuffer));

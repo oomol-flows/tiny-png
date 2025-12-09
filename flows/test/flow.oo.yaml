@@ -22,3 +22,11 @@ nodes:
       - handle: destination_folder
         value: null
     subflow: self::images-compression
+  - node_id: image-file-tinify-compress#3
+    title: "Image File Tinify Compress #3"
+    inputs_from:
+      - handle: file
+        value: /oomol-driver/oomol-storage/ea93d014-d3e6-4441-8c1f-01958557f4cb.jpg
+      - handle: save_path
+        value: null
+    subflow: self::image-file-tinify-compress
